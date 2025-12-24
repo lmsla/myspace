@@ -24,9 +24,9 @@
 *日期 (例如: 2019 - 至今)*
 
 *   **集中式日誌管理平台 (Centralized Log Management Platform - ELK Stack):**
-    *   設計並維護高可用性 (High-Availability) 的 ELK 叢集，負責接收並分析每日約 **[請填寫資料量，如: 500GB]** 的日誌數據，來源涵蓋多種網路設備 (Firewalls, WAF, AD, Cisco)。
-    *   開發複雜的 **Logstash Pipelines**，運用 Grok patterns 與 Ruby filters 將非結構化數據標準化，確保來自 **[請填寫來源數量，如: 50+]** 個不同日誌源的資料一致性。
-    *   建置 **[請填寫數量，如: 20+]** 個 Kibana 儀表板供 SOC (資安維運中心) 團隊使用，視覺化潛在威脅，成功將資安事件回應時間縮短 **[請填寫百分比或時間，如: 50%]**。
+    *   設計並維護高可用性 (High-Availability) 的 ELK 叢集，負責接收並分析每日約 **800~850 GB** 的日誌數據，來源涵蓋多種網路設備 (Firewalls, WAF, AD, Cisco)。
+    *   開發複雜的 **Logstash Pipelines**，運用 Grok patterns 與 Ruby filters 將非結構化數據標準化，確保來自 **10 種不同日誌類型 (涵蓋數十台設備)** 的資料一致性。
+    *   從零開始建構資安可觀測性平台，針對不同日誌類型開發 **7 套專屬 Kibana 儀表板**，為 SOC (資安維運中心) 團隊提供即時的威脅監控與流量分析能力。
     *   實作索引生命週期管理 (ILM) 與快照策略 (Snapshot Strategies) 以因應災難復原需求，確保資料可用性達 **99.9%**。
     *   執行系統壓力測試與容量規劃 (Capacity Planning)，優化 CPU 與 Disk I/O 使用率以應對流量高峰。
     *   透過 Shell Scripts 與 Cron Jobs 自動化日常維護任務 (如清理、Reindexing)，大幅降低手動維運成本。

@@ -4,7 +4,8 @@
 This project represents a comprehensive centralized logging and monitoring solution built on the **ELK Stack (Elasticsearch, Logstash, Kibana)**. It was designed to ingest, normalize, and visualize logs from a wide array of network security devices and servers, providing the Security Operations Center (SOC) with real-time visibility into the organization's security posture.
 
 ## 🏗 Architecture
-*(See `walsin_cluster202412.png` in images for topology)*
+![System Architecture](images/walsin_cluster.png)
+*(Detailed topology view)*
 
 The system aggregates logs from:
 *   **Security Appliances:** Fortinet, Cisco ASA, Citrix, WAF.
