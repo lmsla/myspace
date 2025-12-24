@@ -1,7 +1,7 @@
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#ff9900', 'edgeLabelBackground':'#1f2020', 'tertiaryColor': '#1f2020', 'mainBkg': '#1f2020', 'clusterBkg': '#1f2020', 'clusterBorder': '#666', 'lineColor': '#888'}}}%%
 graph LR
-    subgraph Equipment ["設備層 (Equipment Layer)"]
+    %% Subgraphs for Layers
+    subgraph Equipment [設備層 Equipment]
         direction TB
         FW[Firewall / WAF]:::orange
         AD[Active Directory]:::orange
@@ -10,17 +10,17 @@ graph LR
         DB_Src[MSSQL]:::orange
     end
 
-    subgraph Ingestion ["採集層 (Ingestion Layer)"]
+    subgraph Ingestion [採集層 Ingestion]
         direction TB
-        Logstash[Logstash Cluster<br/>(Normalization & Parsing)]:::blue
+        Logstash[Logstash Cluster<br/>Normalization & Parsing]:::blue
     end
 
-    subgraph Storage ["數據儲存層 (Data Storage Layer)"]
+    subgraph Storage [數據儲存層 Storage]
         direction TB
-        ES[Elasticsearch Cluster<br/>(Hot/Warm Architecture)]:::darkblue
+        ES[Elasticsearch Cluster<br/>Hot/Warm Architecture]:::darkblue
     end
 
-    subgraph Visualization ["視覺化監控層 (Visualization Layer)"]
+    subgraph Visualization [視覺化監控層 Visualization]
         direction TB
         Kibana(Kibana):::grafana
         D1[威脅監控 Threat Mon.]:::purple
@@ -45,16 +45,16 @@ graph LR
     Kibana -.-> D3
     Kibana -.-> D4
 
-    %% Styling Classes
-    classDef orange fill:#ff9900,stroke:#333,stroke-width:2px,color:white,rx:5,ry:5;
-    classDef blue fill:#007acc,stroke:#333,stroke-width:2px,color:white,rx:5,ry:5;
-    classDef darkblue fill:#1a237e,stroke:#5c6bc0,stroke-width:2px,color:white,shape:cylinder;
-    classDef purple fill:#7b1fa2,stroke:#ba68c8,stroke-width:2px,color:white,rx:10,ry:10;
-    classDef grafana fill:#f57f17,stroke:#ffb74d,stroke-width:2px,color:white,shape:circle;
+    %% Styling Classes with Standard CSS
+    classDef orange fill:#ff9900,stroke:#333,stroke-width:2px,color:white;
+    classDef blue fill:#007acc,stroke:#333,stroke-width:2px,color:white;
+    classDef darkblue fill:#1a237e,stroke:#5c6bc0,stroke-width:2px,color:white;
+    classDef purple fill:#7b1fa2,stroke:#ba68c8,stroke-width:2px,color:white;
+    classDef grafana fill:#f57f17,stroke:#ffb74d,stroke-width:2px,color:white;
 
-    %% Subgraph Styling
-    style Equipment fill:#1f2020,stroke:#666,stroke-width:1px,color:#ddd
-    style Ingestion fill:#1f2020,stroke:#666,stroke-width:1px,color:#ddd
-    style Storage fill:#1f2020,stroke:#666,stroke-width:1px,color:#ddd
-    style Visualization fill:#1f2020,stroke:#666,stroke-width:1px,color:#ddd
+    %% Background Styling for Dark Theme Emulation
+    style Equipment fill:#222,stroke:#666,color:#fff
+    style Ingestion fill:#222,stroke:#666,color:#fff
+    style Storage fill:#222,stroke:#666,color:#fff
+    style Visualization fill:#222,stroke:#666,color:#fff
 ```
