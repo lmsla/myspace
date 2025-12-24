@@ -1,0 +1,51 @@
+// Walsin ELK Architecture
+digraph {
+	bgcolor="#ffffff" pad=0.5 rankdir=LR ranksep=1.2
+	node [fontname=Arial fontsize=12 shape=box style="filled,rounded"]
+	subgraph cluster_0 {
+		color=gray fontcolor=black label="設備層 (Equipment Layer)" style=dashed
+		node [color="#ff9900" fillcolor="#ff9900" fontcolor="#ffffff"]
+		FW [label="Firewall / WAF"]
+		AD [label="Active Directory"]
+		Cisco [label="Cisco Network"]
+		Win [label="Windows Servers"]
+		DB [label="MSSQL Database"]
+	}
+	subgraph cluster_1 {
+		color=gray fontcolor=black label="採集層 (Ingestion Layer)" style=dashed
+		node [color="#007acc" fillcolor="#007acc" fontcolor="#ffffff"]
+		Logstash [label="Logstash Cluster
+(Normalization & Parsing)"]
+	}
+	subgraph cluster_2 {
+		color=gray fontcolor=black label="數據儲存層 (Storage Layer)" style=dashed
+		node [color="#1a237e" fillcolor="#1a237e" fontcolor="#ffffff"]
+		ES [label="Elasticsearch Cluster
+(Hot/Warm Architecture)"]
+	}
+	subgraph cluster_3 {
+		color=gray fontcolor=black label="視覺化監控層 (Visualization Layer)" style=dashed
+		node [color="#f57f17" fillcolor="#f57f17" fontcolor="#ffffff"]
+		Kibana [label=Kibana]
+		node [color="#7b1fa2" fillcolor="#7b1fa2" fontcolor="#ffffff"]
+		D1 [label="威脅監控
+(Threat Mon.)"]
+		D2 [label="流量分析
+(Traffic Ana.)"]
+		D3 [label="身份識別
+(Identity Mgmt)"]
+		D4 [label="維運管理
+(Operations)"]
+	}
+	FW -> Logstash
+	AD -> Logstash
+	Cisco -> Logstash
+	Win -> Logstash
+	DB -> Logstash
+	Logstash -> ES [penwidth=3.0]
+	ES -> Kibana [penwidth=3.0]
+	Kibana -> D1 [style=dashed]
+	Kibana -> D2 [style=dashed]
+	Kibana -> D3 [style=dashed]
+	Kibana -> D4 [style=dashed]
+}
