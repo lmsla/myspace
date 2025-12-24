@@ -1,0 +1,80 @@
+
+date pi 1 start
+date total pi 1 end
+
+date pi 8 start
+
+date pi 1 start
+1 _start Tue 16 Nov 2021 08:29:03 AM UTC
+
+date pi 1 start
+1 _start Tue 16 Nov 2021 08:29:14 AM UTC
+1 _end Tue 16 Nov 2021 08:29:14 AM UTC
+date total pi 1 end
+
+date pi 8 start
+1 _start Tue 16 Nov 2021 08:46:51 AM UTC
+2 _start Tue 16 Nov 2021 08:46:51 AM UTC
+3 _start Tue 16 Nov 2021 08:46:51 AM UTC
+4 _start Tue 16 Nov 2021 08:46:51 AM UTC
+5 _start Tue 16 Nov 2021 08:46:51 AM UTC
+7 _start Tue 16 Nov 2021 08:46:52 AM UTC
+6 _start Tue 16 Nov 2021 08:46:51 AM UTC
+8 _start Tue 16 Nov 2021 08:46:52 AM UTC
+2 _end Tue 16 Nov 2021 08:46:51 AM UTC
+4 _end Tue 16 Nov 2021 08:46:51 AM UTC
+6 _end Tue 16 Nov 2021 08:46:51 AM UTC
+5 _end Tue 16 Nov 2021 08:46:51 AM UTC
+8 _end Tue 16 Nov 2021 08:46:52 AM UTC
+1 _end Tue 16 Nov 2021 08:46:51 AM UTC
+7 _end Tue 16 Nov 2021 08:46:52 AM UTC
+3 _end Tue 16 Nov 2021 08:46:51 AM UTC
+date total pi 8 end
+
+date pi 16 start
+2 _start Tue 16 Nov 2021 09:07:15 AM UTC
+1 _start Tue 16 Nov 2021 09:07:15 AM UTC
+3 _start Tue 16 Nov 2021 09:07:15 AM UTC
+4 _start Tue 16 Nov 2021 09:07:15 AM UTC
+5 _start Tue 16 Nov 2021 09:07:15 AM UTC
+7 _start Tue 16 Nov 2021 09:07:15 AM UTC
+6 _start Tue 16 Nov 2021 09:07:15 AM UTC
+8 _start Tue 16 Nov 2021 09:07:15 AM UTC
+9 _start Tue 16 Nov 2021 09:07:15 AM UTC
+11 _start Tue 16 Nov 2021 09:07:15 AM UTC
+15 _start Tue 16 Nov 2021 09:07:15 AM UTC
+14 _start Tue 16 Nov 2021 09:07:15 AM UTC
+16 _start Tue 16 Nov 2021 09:07:15 AM UTC
+10 _start Tue 16 Nov 2021 09:07:15 AM UTC
+12 _start Tue 16 Nov 2021 09:07:15 AM UTC
+13 _start Tue 16 Nov 2021 09:07:15 AM UTC
+4 _end Tue 16 Nov 2021 09:07:15 AM UTC
+10 _end Tue 16 Nov 2021 09:07:15 AM UTC
+1 _end Tue 16 Nov 2021 09:07:15 AM UTC
+2 _end Tue 16 Nov 2021 09:07:15 AM UTC
+11 _end Tue 16 Nov 2021 09:07:15 AM UTC
+5 _end Tue 16 Nov 2021 09:07:15 AM UTC
+3 _end Tue 16 Nov 2021 09:07:15 AM UTC
+12 _end Tue 16 Nov 2021 09:07:15 AM UTC
+14 _end Tue 16 Nov 2021 09:07:15 AM UTC
+7 _end Tue 16 Nov 2021 09:07:15 AM UTC
+16 _end Tue 16 Nov 2021 09:07:15 AM UTC
+8 _end Tue 16 Nov 2021 09:07:15 AM UTC
+9 _end Tue 16 Nov 2021 09:07:15 AM UTC
+6 _end Tue 16 Nov 2021 09:07:15 AM UTC
+15 _end Tue 16 Nov 2021 09:07:15 AM UTC
+13 _end Tue 16 Nov 2021 09:07:15 AM UTC
+date total pi 16 end
+date dd write start
+65536000+0 records in
+65536000+0 records out
+536870912000 bytes (537 GB, 500 GiB) copied, 618.156 s, 869 MB/s
+Tue 16 Nov 2021 09:42:22 AM UTCdd write end
+date dd read start
+65536000+0 records in
+65536000+0 records out
+536870912000 bytes (537 GB, 500 GiB) copied, 795.451 s, 675 MB/s
+Tue 16 Nov 2021 09:55:37 AM UTCdd read end
+date delete start
+date delete end
+date finish total.sh
