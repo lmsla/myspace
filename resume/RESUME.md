@@ -36,9 +36,9 @@
 
 ---
 
-## 📂 精選專案 (Projects)
+## 📂 專案經驗 (Projects)
 
-### **Walsin ELK 日誌分析系統**
+### **華新麗華 ELK 日誌分析系統**
 *企業級日誌聚合與視覺化平台*
 *   **基礎設施 (Infrastructure):** 在 Linux 伺服器上部署並調校 Elasticsearch 節點；優化 JVM Heap 與 Shard 分配以提升效能。
 *   **Pipeline as Code:** 將 Logstash 設定檔視為程式碼管理，以靈活應對各類資安設備日誌格式的頻繁變更。
