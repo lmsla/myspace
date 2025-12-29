@@ -40,6 +40,48 @@
 
 ### **華新麗華 ELK 日誌分析系統**
 *企業級日誌聚合與視覺化平台*
+
+```mermaid
+graph LR
+    subgraph Device_Layer ["設備層 (Device Layer)"]
+        direction TB
+        D1["MSSQL Database"]
+        D2["Windows Servers"]
+        D3["Cisco Network"]
+        D4["Active Directory"]
+        D5["Firewall / WAF"]
+    end
+
+    subgraph Ingestion ["資料收集 (Ingestion)"]
+        L["Logstash Cluster<br>(Normalization)"]
+    end
+
+    subgraph Storage ["儲存 (Storage)"]
+        E["Elasticsearch<br>(Hot/Warm Nodes)"]
+    end
+
+    subgraph Visualization ["視覺化 (Visualization)"]
+        K["Kibana"]
+    end
+
+    subgraph Dashboards ["監控儀表板 (Dashboards)"]
+        direction TB
+        DB1["Operations"]
+        DB2["Identity Mgmt"]
+        DB3["Traffic Analysis"]
+        DB4["Threat Monitoring"]
+    end
+
+    D1 & D2 & D3 & D4 & D5 --> L
+    L --> E
+    E --> K
+    K -.-> DB1 & DB2 & DB3 & DB4
+
+    style Ingestion fill:#007acc,stroke:#333,stroke-width:2px,color:#fff
+    style Storage fill:#1a237e,stroke:#333,stroke-width:2px,color:#fff
+    style Visualization fill:#f57f17,stroke:#333,stroke-width:2px,color:#fff
+```
+
 *   **基礎設施 (Infrastructure):** 在 Linux 伺服器上部署並調校 Elasticsearch 節點；優化 JVM Heap 與 Shard 分配以提升效能。
 *   **Pipeline as Code:** 將 Logstash 設定檔視為程式碼管理，以靈活應對各類資安設備日誌格式的頻繁變更。
 *   **可觀測性 (Observability):** 建立全方位的監控儀表板，即時監控網路流量、使用者身分識別與資安威脅。
