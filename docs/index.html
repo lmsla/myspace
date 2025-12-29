@@ -9,6 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'dark',
+            securityLevel: 'loose',
+            fontFamily: '"Noto Sans TC", sans-serif'
+        });
+    </script>
 </head>
 <body>
 
@@ -116,8 +125,50 @@
                     </div>
                 </div>
                 <div class="project-image">
-                    <img src="images/walsin_architecture_hq.png" alt="System Architecture Diagram" loading="lazy">
-                    <p class="caption">系統架構圖 (System Architecture)</p>
+                    <div class="mermaid">
+graph LR
+    subgraph Device_Layer ["設備層 (Device Layer)"]
+        direction TB
+        D1["MSSQL Database"]
+        D2["Windows Servers"]
+        D3["Cisco Network"]
+        D4["Active Directory"]
+        D5["Firewall / WAF"]
+    end
+
+    subgraph Ingestion ["資料收集 (Ingestion)"]
+        L["Logstash Cluster<br>(Normalization)"]
+    end
+
+    subgraph Storage ["儲存 (Storage)"]
+        E["Elasticsearch<br>(Hot/Warm Nodes)"]
+    end
+
+    subgraph Visualization ["視覺化 (Visualization)"]
+        K["Kibana"]
+    end
+
+    subgraph Dashboards ["監控儀表板 (Dashboards)"]
+        direction TB
+        DB1["Operations"]
+        DB2["Identity Mgmt"]
+        DB3["Traffic Analysis"]
+        DB4["Threat Monitoring"]
+    end
+
+    D1 & D2 & D3 & D4 & D5 --> L
+    L --> E
+    E --> K
+    K -.-> DB1 & DB2 & DB3 & DB4
+
+    %% Styles for Dark Theme Compatibility
+    style Ingestion fill:#007acc,stroke:#333,stroke-width:2px,color:#fff
+    style Storage fill:#1a237e,stroke:#333,stroke-width:2px,color:#fff
+    style Visualization fill:#f57f17,stroke:#333,stroke-width:2px,color:#fff
+
+    linkStyle default stroke:#666,stroke-width:2px
+                    </div>
+                    <p class="caption">系統架構圖 (System Architecture - Mermaid Rendered)</p>
                 </div>
             </div>
         </section>
